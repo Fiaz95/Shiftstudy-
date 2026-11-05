@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 650px;
+  margin: 32px auto;
+  padding: 0 16px;
+  line-height: 1.5;
+  color: #222;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+section {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 6px 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+form button {
+  display: block;
+  margin-top: 16px;
+}
+
+.note {
+  color: #555;
+  font-size: 0.9rem;
+}

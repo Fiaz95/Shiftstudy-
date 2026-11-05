@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShiftStudy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>ShiftStudy</h1>
+  <p>A study planner for students with part-time jobs.</p>
+
+  <nav aria-label="Prototype screens">
+    <button data-screen="availability">1. Availability</button>
+    <button data-screen="assignment">2. Assignment</button>
+    <button data-screen="plan">3. Weekly plan</button>
+    <button data-screen="replan">4. Replan</button>
+  </nav>
+
+  <section id="availability">
+    <h2>Add a commitment</h2>
+    <form id="commitmentForm">
+      <label for="type">Type</label>
+      <select id="type">
+        <option>Work shift</option>
+        <option>Class</option>
+        <option>Personal time</option>
+      </select>
+
+      <label for="day">Day</label>
+      <select id="day">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option selected>Saturday</option>
+        <option>Sunday</option>
+      </select>
+
+      <label for="start">Start time</label>
+      <input id="start" type="time" value="09:00" required>
+
+      <label for="end">End time</label>
+      <input id="end" type="time" value="18:00" required>
+
+      <button type="submit">Add commitment</button>
+    </form>
+
+    <p id="commitmentMessage" role="status"></p>
+    <ul id="commitmentList"></ul>
+    <button data-screen="assignment">Next: Assignment</button>
+  </section>
+
+  <section id="assignment" hidden>
+    <h2>Add an assignment</h2>
+    <form id="assignmentForm">
+      <label for="assignmentName">Assignment name</label>
+      <input id="assignmentName" value="Venture report" required>
+
+      <label for="deadline">Deadline</label>
+      <input id="deadline" type="date" required>
+
+      <label for="task">What will you work on first?</label>
+      <input id="task" value="Draft the problem section" required>
+
+      <button type="submit">View weekly plan</button>
+    </form>
+  </section>
+
+  <section id="plan" hidden>
+    <h2>Weekly plan</h2>
+    <p class="note">This prototype uses example study times.</p>
+
+    <h3>Commitments</h3>
+    <ul id="planCommitments"></ul>
+
+    <h3>Study session</h3>
+    <p id="planAssignment"></p>
+    <p id="planTask"></p>
+    <p id="planTime"></p>
+
+    <button data-screen="replan">I missed this session</button>
+  </section>
+
+  <section id="replan" hidden>
+    <h2>Move your study session</h2>
+    <p id="currentSession"></p>
+
+    <form id="replanForm">
+      <label for="newSlot">Choose an example time</label>
+      <select id="newSlot">
+        <option>Tuesday, 10:00–11:00</option>
+        <option>Wednesday, 15:00–16:00</option>
+      </select>
+
+      <button type="submit">Save new time</button>
+    </form>
+  </section>
+</body>
+</html>
